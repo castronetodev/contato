@@ -1,0 +1,77 @@
+<div class="app flex-row align-items-center">
+    <div class="container">
+        <div class="row justify-content-center">
+                        <div class="col-md-6" ng-hide="!userdata">
+                <div class="card mx-5">
+                    <div class="card-block p-4">
+                        <h2>Ola {{userdata.displayName}}</h2>
+                        <p class="text-muted">Create your account</p>
+    
+                               
+                        <center>
+                             <img src="{{userdata.photoURL}}" width="150" height="150" class="img-rounded">
+                        </center>
+
+                        <div class="input-group mb-3">
+                            <p class="text-muted">por questão de segurança insira seu cpf</p>
+                        </div>
+                        <form name="myForm">
+                        <div class="input-group mb-4">
+                            <span class="input-group-addon"><i>cpf</i></span>
+                            <input  name="cpf" ng-model="cpf" ng-cpf ui-mask="999.999.999-99" class="form-control">                
+                        </div>
+                            <button ng-disabled="!myForm.cpf.$valid || !cpf" type="button" ng-click="LoginSocialAccount(cpf)" class="btn btn-block btn-success">Create Account</button>
+                        </form>
+                    </div>
+  
+                </div>
+            </div>
+            <div class="col-md-6" ng-hide="userdata">
+                <div class="card mx-4">
+                    <div class="card-block p-4">
+                        <h1>Register</h1>
+                        <p class="text-muted">Create your account</p>
+                        <div class="input-group mb-3">
+                            <span class="input-group-addon"><i class="icon-user"></i>
+                            </span>
+                            <input type="text" class="form-control" placeholder="Username">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-addon">@</span>
+                            <input type="text" class="form-control" placeholder="Email">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-addon"><i class="icon-lock"></i>
+                            </span>
+                            <input type="password" class="form-control" placeholder="Password">
+                        </div>
+
+                        <div class="input-group mb-4">
+                            <span class="input-group-addon"><i class="icon-lock"></i>
+                            </span>
+                            <input type="password" class="form-control" placeholder="Repeat password">
+                        </div>
+
+                        <button type="button" class="btn btn-block btn-success">Create Account</button>
+                    </div>
+                    <div class="card-footer p-4">
+                        <div class="row">
+                            <div class="col-6">
+                                <button ng-click="facebookAuth()" class="btn btn-block btn-facebook" type="button">
+                                    <span>facebook</span>
+                                </button>
+                            </div>
+                            <div class="col-6">
+                                <button ng-click="googleAuth()" class="btn btn-block btn-google-plus" type="button">
+                                    <span>Google</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
